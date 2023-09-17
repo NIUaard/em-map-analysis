@@ -1,0 +1,73 @@
+&NEWRUN
+  Head='A0-deck _asis_ Nov-2002 drwg #345068'
+  RUN=1,
+  Loop=F, Nloop=2
+  Distribution = 'grid_distrib.ini', Xoff=0.0, Yoff=0.0
+  Lmagnetized=.F
+  Lsub_rot=.F
+  EmitS=.F
+!  XYRMS=1.0
+  C_Emits=.F
+  PhaseS=.T
+  RefS=.T
+  TcheckS=.F
+  CathodeS=.F,
+  TrackS=.F, TRACK_ALL=.T, PHASE_SCAN=.F, AUTO_PHASE=.T
+  ZSTART=0.,	ZSTOP=1.405
+  Zemit=100
+  Zphase=1
+  Larmors=.F
+  H_max=0.005
+  H_min=0.0005
+  qbunch=1
+ /
+
+ &SCAN
+  LScan=.F
+  Scan_para='Phi(1)'
+  S_min=-100, S_max=100, S_numb=25
+  FOM(1)='mean energy'
+ /
+
+ &CHARGE
+  Loop=.F,
+  LSPCH=.F
+
+  Nrad=10,
+  Nlong_in=12
+  Cell_var=2.0
+  min_grid=0.4D-6
+  Max_scale=0.05
+  Lmirror=.T
+  Linert=.F
+!  Max_Count = 100
+ /
+
+ &Aperture
+ /
+ 
+ &FEM
+ /
+
+ &CAVITY
+  Loop=.T,
+  LEfield=.T
+  File_Efield(1) = '3D_asta', 
+  Nue(1)=1.3, MaxE(1)=-30.00000, Phi(1)= -0., 
+  C_pos(1)=0.18500000000000000
+ /
+
+ &CAVITY
+  Loop=.T,
+  LEfield=.T
+  File_Efield(1) = 'Ez_axis.dat', 
+  Nue(1)=1.3, MaxE(1)=-30.00000, Phi(1)= -0., 
+  C_pos(1)=0.18500000000000000
+ /
+
+ &SOLENOID
+ /
+
+ &QUADRUPOLE
+ /
+

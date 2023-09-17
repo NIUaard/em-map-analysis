@@ -3,7 +3,18 @@ import matplotlib.pyplot as plt
 #import pydefault24
 import matplotlib.gridspec as gridspec
 from matplotlib import ticker
+from matplotlib import rc
 
+FontSize=16
+FontSizeLabelAxis=16
+rc('legend',fontsize=FontSize)
+rc('xtick',labelsize=FontSize)
+rc('ytick',labelsize=FontSize)
+font = {'family' : 'normal',
+        'size'   : FontSize}
+
+rc('font', **font)
+rc('text', usetex=True)
 
 Xintt=np.loadtxt('dist.ini')
 X3dtt=np.loadtxt('9-celltest.0140.001')

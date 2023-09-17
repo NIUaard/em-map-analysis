@@ -1,5 +1,5 @@
 
-# AWA linac characterization
+# cavity field-map characterization
 
 
 ## Description
